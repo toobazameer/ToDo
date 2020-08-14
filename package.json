@@ -17,9 +17,11 @@
   "author": "tooba",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "mysql2": "^2.0.2",
     "nodemon": "^2.0.4",
     "sequelize": "^5.21.2"
