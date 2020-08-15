@@ -6,7 +6,10 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.STRING
     },
-    published: {
+    author: {
+      type: Sequelize.STRING
+    },
+    status: {
       type: Sequelize.BOOLEAN
     }
   });

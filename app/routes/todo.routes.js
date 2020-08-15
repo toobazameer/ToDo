@@ -9,8 +9,8 @@ module.exports = app => {
   // Retrieve all todos
   router.get("/", todos.findAll);
 
-  // Retrieve all published todos
-  router.get("/published", todos.findAllPublished);
+  // Retrieve all status todos
+  router.get("/status", todos.findAllstatus);
 
   // Retrieve a single todo with id
   router.get("/:id", todos.findOne);

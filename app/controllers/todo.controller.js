@@ -16,7 +16,8 @@ exports.create = (req, res) => {
   const todo = {
     title: req.body.title,
     description: req.body.description,
-    published: req.body.published ? req.body.published : false
+    author: req.body.author,
+    status: req.body.status ? req.body.status : false
   };
 
   // Save Todo in the database
@@ -47,7 +48,6 @@ exports.findAll = (req, res) => {
           err.message || "Some error occurred while retrieving Todos."
       });
     });
-
 };
 
 // Find a single Todo with an id
@@ -57,7 +57,7 @@ exports.findOne = (req, res) => {
   Todo.findByPk(id)
     .then(data => {
       res.send(data);
-    })
+      })
     .catch(err => {
       res.status(500).send({
         message: "Error retrieving Todo with id=" + id
@@ -132,9 +132,9 @@ exports.deleteAll = (req, res) => {
     });
 };
 
-// find all published Todo
-exports.findAllPublished = (req, res) => {
-  Todo.findAll({ where: { published: true } })
+// find all status Todo
+exports.findAllstatus = (req, res) => {
+  Todo.findAll({ where: { status: true } })
     .then(data => {
       res.send(data);
     })

@@ -4,7 +4,6 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
-  operatorsAliases: false,
 
   pool: {
     max: dbConfig.pool.max,
@@ -20,5 +19,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.todos = require("./todo.model.js")(sequelize, Sequelize);
+db.user = require("./user.model.js")(sequelize, Sequelize);
+
 
 module.exports = db;
